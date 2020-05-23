@@ -94,6 +94,109 @@ public class Main {
         return front + front + front;
     }
 
+    // Given a string, take the last char and return a new string with the last char added at the front and back, so "cat" yields "tcatt".
+    // The original string will be length 1 or more.
+    public String backAround(String str) {
+
+        String lastChar = str.substring(str.length()-1);
+
+        return lastChar + str + lastChar;
+    }
+
+    //Return true if the given non-negative number is a multiple of 3 or a multiple of 5.
+    public boolean or35(int n) {
+        return (n%3 ==0) || (n%5 ==0);
+    }
+
+    // Given a string, take the first 2 chars and return the string with the 2 chars added at both the front and back, so "kitten" yields"kikittenki".
+    // If the string length is less than 2, use whatever chars are there.
+    public String front22(String str) {
+        int take = 2;
+        if(take > str.length()) {
+            take = str.length();
+        }
+        String front = str.substring(0, take);
+        return front + str + front;
+    }
+
+    // Given a string, return true if the string starts with "hi" and false otherwise.
+    public boolean startHi(String str) {
+        if (str.length() <2) return false;
+
+        String firstTwo = str.substring(0,2);
+
+        if(firstTwo.equals("hi")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //Given two temperatures, return true if one is less than 0 and the other is greater than 100.
+    public boolean icyHot(int temp1, int temp2) {
+        if ((temp1 < 0 && temp2 >100) || (temp2 < 0 && temp1 >100)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //Given 2 int values, return true if either of them is in the range 10..20 inclusive.
+    public boolean in1020(int a, int b) {
+        return ((a >= 10 && a <= 20) || (b >= 10 && b <= 20));
+    }
+
+    //We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 3 int values, return true if 1 or more of them are teen.
+    public boolean hasTeen(int a, int b, int c) {
+        return ((a >= 13 && a <=19) || (b >= 13 && b <=19) || (c >= 13 && c <=19));
+    }
+
+    //We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 2 int values, return true if one or the other is teen, but not both.
+    public boolean loneTeen(int a, int b) {
+        boolean aTeen = (a >= 13 && a <=19);
+        boolean bTeen = (b >= 13 && b <=19);
+
+        return (aTeen && !bTeen) || (!aTeen && bTeen);
+    }
+
+    // Given a string, if the string "del" appears starting at index 1, return a string where that "del" has been deleted.
+    // Otherwise, return the string unchanged.
+    public String delDel(String str) {
+
+        if(str.length()>=4 && str.substring(1,4).equals("del")) {
+            return str.substring(0,1) + str.substring(4);
+        }
+        return str;
+    }
+
+    //Return true if the given string begins with "mix", except the 'm' can be anything, so "pix", "9ix" .. all count.
+    public boolean mixStart(String str) {
+        if(str.length() >=3) {
+            return (str.substring(1,3).equals("ix"));
+        } else {
+            return false;
+        }
+    }
+
+    // Given a string, return a string made of the first 2 chars (if present), however include first char only if it is 'o'
+    // and include the second only if it is 'z', so "ozymandias" yields "oz".
+    public String startOz(String str) {
+        String result = "";
+
+        if (str.length() >= 1 && str.charAt(0)=='o') {
+            result = result + str.charAt(0);
+        }
+
+        if (str.length() >= 2 && str.charAt(1)=='z') {
+            result = result + str.charAt(1);
+        }
+        return result;
+    }
+
+
+
+
+
 
 
 }
