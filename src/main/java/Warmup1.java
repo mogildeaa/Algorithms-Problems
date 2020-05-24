@@ -1,4 +1,4 @@
-public class Main {
+public class Warmup1 {
 
     public static void main(String[] args) {
 //        missingChar("Alex", 3);
@@ -6,7 +6,7 @@ public class Main {
 
 
     }
-    // WARMUP
+
     // Given two int values, return their sum. Unless the two values are the same, then return double their sum.
     public int sumDouble(int a, int b) {
         int sum = a + b;
@@ -193,8 +193,97 @@ public class Main {
         return result;
     }
 
+    //Given three int values, a b c, return the largest.
+    public int intMax(int a, int b, int c) {
+        int max;
 
+        if(a>b) {
+            max = a;
+        } else {
+            max = b;
+        }
 
+        if(c>max) {
+            max=c;
+        }
+        return max;
+    }
+
+    //Given 2 int values, return whichever value is nearest to the value 10, or return 0 in the event of a tie.
+    public int close10(int a, int b) {
+        int aDiff = Math.abs(a - 10);
+        int bDiff = Math.abs(b - 10);
+
+        if(aDiff < bDiff) {
+            return a;
+        }
+
+        if(bDiff < aDiff) {
+            return b;
+        }
+        return 0;
+    }
+
+    //Given 2 int values, return true if they are both in the range 30..40 inclusive, or they are both in the range 40..50 inclusive.
+    public boolean in3050(int a, int b) {
+        return (a >= 30 && a <= 40) && (b >=30 && b <= 40) ||
+                (a >= 40 && a <= 50) && (b >=40 && b <= 50);
+    }
+
+    //Given 2 positive int values, return the larger value that is in the range 10..20 inclusive, or return 0 if neither is in that range.
+    public int max1020(int a, int b) {
+
+        if (b > a) {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+
+        if (a >= 10 && a <= 20) return a;
+        if (b >= 10 && b <= 20) return b;
+        return 0;
+    }
+
+    //Return true if the given string contains between 1 and 3 'e' chars.
+    public boolean stringE(String str) {
+        int count = 0;
+
+        for (int i=0; i<str.length(); i++) {
+            if (str.charAt(i) == 'e') count++;
+        }
+        return (count >= 1 && count <= 3);
+    }
+
+    //Given two non-negative int values, return true if they have the same last digit, such as with 27 and 57.
+    public boolean lastDigit(int a, int b) {
+        return (a%10 == b%10);
+    }
+
+    //Given a string, return a new string where the last 3 chars are now in upper case. If the string has less than 3 chars, uppercase whatever is there.
+    public String endUp(String str) {
+
+        if(str.length() <=3) {
+            return str.toUpperCase();
+        }
+
+        int cut = str.length()-3;
+        String front = str.substring(0, cut);
+        String back = str.substring(cut);
+
+        return front + back.toUpperCase();
+    }
+
+    //Given a non-empty string and an int N, return the string made starting with char 0, and then every Nth char of the string.
+    //So if N is 3, use char 0, 3, 6, ... and so on. N is 1 or more.
+    public String everyNth(String str, int n) {
+
+        String result = "";
+
+        for(int i=0; i<str.length(); i=i + n) {
+            result = result + str.charAt(i);
+        }
+        return result;
+    }
 
 
 
