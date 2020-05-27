@@ -1,8 +1,17 @@
 public class Warmup1 {
 
     public static void main(String[] args) {
+
+        W3resource x = new W3resource();
+
 //        missingChar("Alex", 3);
 //        frontBack("Alex");
+//        x.makeMultiplication();
+//        System.out.println(x.digitSum(1238));
+//        System.out.println(x.reverseString("Alex"));
+//        x.checkPalindrom("JavaA");
+//        x.countChars("Aa kiu, I swd skieo 236587. GH kiu: sieo?? 25.33");
+        x.count3digitNumbers();
 
 
     }
@@ -28,7 +37,7 @@ public class Warmup1 {
 
     // We have a loud talking parrot. The "hour" parameter is the current hour time in the range 0..23. We are in trouble if the parrot is talking and the hour is before 7 or after 20. Return true if we are in trouble.
     public boolean parrotTrouble(boolean talking, int hour) {
-        if((talking == true) && (hour < 7 || hour > 20)) {
+        if ((talking == true) && (hour < 7 || hour > 20)) {
             return true;
         }
         return false;
@@ -36,17 +45,17 @@ public class Warmup1 {
 
     // Given 2 ints, a and b, return true if one if them is 10 or if their sum is 10.
     public boolean makes10(int a, int b) {
-        return (a == 10 || b == 10 || a+b == 10);
+        return (a == 10 || b == 10 || a + b == 10);
     }
 
     // Given an int n, return true if it is within 10 of 100 or 200. Note: Math.abs(num) computes the absolute value of a number.
     public boolean nearHundred(int n) {
-        return ((Math.abs(100-n) <=10) || (Math.abs(200-n) <=10));
+        return ((Math.abs(100 - n) <= 10) || (Math.abs(200 - n) <= 10));
     }
 
     // Given 2 int values, return true if one is negative and one is positive. Except if the parameter "negative" is true, then return true only if both are negative.
     public boolean posNeg(int a, int b, boolean negative) {
-        if(negative) {
+        if (negative) {
             return (a < 0 && b < 0);
         } else {
             return ((a < 0 && b > 0) || (a > 0 && b < 0));
@@ -55,7 +64,7 @@ public class Warmup1 {
 
     // Given a string, return a new string where "not " has been added to the front. However, if the string already begins with "not", return the string unchanged.
     public String notString(String str) {
-        if (str.length() >=3 && str.substring(0, 3).equals("not")) {
+        if (str.length() >= 3 && str.substring(0, 3).equals("not")) {
             return str;
         }
         return "not " + str;
@@ -66,18 +75,18 @@ public class Warmup1 {
     public static String missingChar(String str, int n) {
         String front = str.substring(0, n);
 
-        String back = str.substring(n+1);
+        String back = str.substring(n + 1);
 
         return front + back;
     }
 
     // Given a string, return a new string where the first and last chars have been exchanged.
     public static String frontBack(String str) {
-        if(str.length() <=1) return str;
+        if (str.length() <= 1) return str;
 
-        String mid = str.substring(1, str.length()-1);
+        String mid = str.substring(1, str.length() - 1);
 
-        System.out.println(str.charAt(str.length()-1) + mid + str.charAt(0));
+        System.out.println(str.charAt(str.length() - 1) + mid + str.charAt(0));
         return "";
     }
 
@@ -86,8 +95,8 @@ public class Warmup1 {
 
         String front;
 
-        if (str.length() >=3) {
-            front = str.substring(0,3);
+        if (str.length() >= 3) {
+            front = str.substring(0, 3);
         } else {
             front = str;
         }
@@ -98,21 +107,21 @@ public class Warmup1 {
     // The original string will be length 1 or more.
     public String backAround(String str) {
 
-        String lastChar = str.substring(str.length()-1);
+        String lastChar = str.substring(str.length() - 1);
 
         return lastChar + str + lastChar;
     }
 
     //Return true if the given non-negative number is a multiple of 3 or a multiple of 5.
     public boolean or35(int n) {
-        return (n%3 ==0) || (n%5 ==0);
+        return (n % 3 == 0) || (n % 5 == 0);
     }
 
     // Given a string, take the first 2 chars and return the string with the 2 chars added at both the front and back, so "kitten" yields"kikittenki".
     // If the string length is less than 2, use whatever chars are there.
     public String front22(String str) {
         int take = 2;
-        if(take > str.length()) {
+        if (take > str.length()) {
             take = str.length();
         }
         String front = str.substring(0, take);
@@ -121,11 +130,11 @@ public class Warmup1 {
 
     // Given a string, return true if the string starts with "hi" and false otherwise.
     public boolean startHi(String str) {
-        if (str.length() <2) return false;
+        if (str.length() < 2) return false;
 
-        String firstTwo = str.substring(0,2);
+        String firstTwo = str.substring(0, 2);
 
-        if(firstTwo.equals("hi")) {
+        if (firstTwo.equals("hi")) {
             return true;
         } else {
             return false;
@@ -134,7 +143,7 @@ public class Warmup1 {
 
     //Given two temperatures, return true if one is less than 0 and the other is greater than 100.
     public boolean icyHot(int temp1, int temp2) {
-        if ((temp1 < 0 && temp2 >100) || (temp2 < 0 && temp1 >100)) {
+        if ((temp1 < 0 && temp2 > 100) || (temp2 < 0 && temp1 > 100)) {
             return true;
         } else {
             return false;
@@ -148,13 +157,13 @@ public class Warmup1 {
 
     //We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 3 int values, return true if 1 or more of them are teen.
     public boolean hasTeen(int a, int b, int c) {
-        return ((a >= 13 && a <=19) || (b >= 13 && b <=19) || (c >= 13 && c <=19));
+        return ((a >= 13 && a <= 19) || (b >= 13 && b <= 19) || (c >= 13 && c <= 19));
     }
 
     //We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 2 int values, return true if one or the other is teen, but not both.
     public boolean loneTeen(int a, int b) {
-        boolean aTeen = (a >= 13 && a <=19);
-        boolean bTeen = (b >= 13 && b <=19);
+        boolean aTeen = (a >= 13 && a <= 19);
+        boolean bTeen = (b >= 13 && b <= 19);
 
         return (aTeen && !bTeen) || (!aTeen && bTeen);
     }
@@ -163,16 +172,16 @@ public class Warmup1 {
     // Otherwise, return the string unchanged.
     public String delDel(String str) {
 
-        if(str.length()>=4 && str.substring(1,4).equals("del")) {
-            return str.substring(0,1) + str.substring(4);
+        if (str.length() >= 4 && str.substring(1, 4).equals("del")) {
+            return str.substring(0, 1) + str.substring(4);
         }
         return str;
     }
 
     //Return true if the given string begins with "mix", except the 'm' can be anything, so "pix", "9ix" .. all count.
     public boolean mixStart(String str) {
-        if(str.length() >=3) {
-            return (str.substring(1,3).equals("ix"));
+        if (str.length() >= 3) {
+            return (str.substring(1, 3).equals("ix"));
         } else {
             return false;
         }
@@ -183,11 +192,11 @@ public class Warmup1 {
     public String startOz(String str) {
         String result = "";
 
-        if (str.length() >= 1 && str.charAt(0)=='o') {
+        if (str.length() >= 1 && str.charAt(0) == 'o') {
             result = result + str.charAt(0);
         }
 
-        if (str.length() >= 2 && str.charAt(1)=='z') {
+        if (str.length() >= 2 && str.charAt(1) == 'z') {
             result = result + str.charAt(1);
         }
         return result;
@@ -197,14 +206,14 @@ public class Warmup1 {
     public int intMax(int a, int b, int c) {
         int max;
 
-        if(a>b) {
+        if (a > b) {
             max = a;
         } else {
             max = b;
         }
 
-        if(c>max) {
-            max=c;
+        if (c > max) {
+            max = c;
         }
         return max;
     }
@@ -214,11 +223,11 @@ public class Warmup1 {
         int aDiff = Math.abs(a - 10);
         int bDiff = Math.abs(b - 10);
 
-        if(aDiff < bDiff) {
+        if (aDiff < bDiff) {
             return a;
         }
 
-        if(bDiff < aDiff) {
+        if (bDiff < aDiff) {
             return b;
         }
         return 0;
@@ -226,8 +235,8 @@ public class Warmup1 {
 
     //Given 2 int values, return true if they are both in the range 30..40 inclusive, or they are both in the range 40..50 inclusive.
     public boolean in3050(int a, int b) {
-        return (a >= 30 && a <= 40) && (b >=30 && b <= 40) ||
-                (a >= 40 && a <= 50) && (b >=40 && b <= 50);
+        return (a >= 30 && a <= 40) && (b >= 30 && b <= 40) ||
+                (a >= 40 && a <= 50) && (b >= 40 && b <= 50);
     }
 
     //Given 2 positive int values, return the larger value that is in the range 10..20 inclusive, or return 0 if neither is in that range.
@@ -248,7 +257,7 @@ public class Warmup1 {
     public boolean stringE(String str) {
         int count = 0;
 
-        for (int i=0; i<str.length(); i++) {
+        for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == 'e') count++;
         }
         return (count >= 1 && count <= 3);
@@ -256,17 +265,17 @@ public class Warmup1 {
 
     //Given two non-negative int values, return true if they have the same last digit, such as with 27 and 57.
     public boolean lastDigit(int a, int b) {
-        return (a%10 == b%10);
+        return (a % 10 == b % 10);
     }
 
     //Given a string, return a new string where the last 3 chars are now in upper case. If the string has less than 3 chars, uppercase whatever is there.
     public String endUp(String str) {
 
-        if(str.length() <=3) {
+        if (str.length() <= 3) {
             return str.toUpperCase();
         }
 
-        int cut = str.length()-3;
+        int cut = str.length() - 3;
         String front = str.substring(0, cut);
         String back = str.substring(cut);
 
@@ -279,13 +288,11 @@ public class Warmup1 {
 
         String result = "";
 
-        for(int i=0; i<str.length(); i=i + n) {
+        for (int i = 0; i < str.length(); i = i + n) {
             result = result + str.charAt(i);
         }
         return result;
     }
-
-
 
 
 }

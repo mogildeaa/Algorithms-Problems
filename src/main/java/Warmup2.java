@@ -5,7 +5,7 @@ public class Warmup2 {
 
         String result = "";
 
-        for(int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             result += str;
         }
         return result;
@@ -17,14 +17,14 @@ public class Warmup2 {
 
         int frontLen = 3;
 
-        if(frontLen > str.length()) {
+        if (frontLen > str.length()) {
             frontLen = str.length();
         }
 
-        String result="";
+        String result = "";
         String front = str.substring(0, frontLen);
 
-        for(int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             result = result + front;
         }
         return result;
@@ -35,8 +35,8 @@ public class Warmup2 {
 
         int counter = 0;
 
-        for(int i=0; i<str.length()-1; i++) {
-            if(str.substring(i, i+2).equals("xx")) counter ++;
+        for (int i = 0; i < str.length() - 1; i++) {
+            if (str.substring(i, i + 2).equals("xx")) counter++;
         }
         return counter;
     }
@@ -47,18 +47,18 @@ public class Warmup2 {
 
         if (i == -1) return false; // no "x" at all
 
-        if (i+1 >= str.length()) return false; // check i+1 in bounds
+        if (i + 1 >= str.length()) return false; // check i+1 in bounds
 
-        return str.substring(i+1, i+2).equals("x");
+        return str.substring(i + 1, i + 2).equals("x");
     }
 
     //Given a non-empty string like "Code" return a string like "CCoCodCode".
     public String stringSplosion(String str) {
 
-        String result="";
+        String result = "";
 
-        for(int i = 0; i < str.length(); i++) {
-            result = result + str.substring(0, i+1);
+        for (int i = 0; i < str.length(); i++) {
+            result = result + str.substring(0, i + 1);
         }
         return result;
     }
@@ -69,13 +69,13 @@ public class Warmup2 {
 
         if (str.length() < 2) return 0;
 
-        String end = str.substring(str.length()-2);
+        String end = str.substring(str.length() - 2);
 
         int count = 0;
 
         // Check each substring length 2 starting at i
-        for (int i=0; i<str.length()-2; i++) {
-            String sub = str.substring(i, i+2);
+        for (int i = 0; i < str.length() - 2; i++) {
+            String sub = str.substring(i, i + 2);
             if (sub.equals(end)) {
                 count++;
             }
