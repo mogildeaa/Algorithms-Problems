@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Warmup1 {
 
     public static void main(String[] args) {
@@ -11,9 +13,13 @@ public class Warmup1 {
 //        System.out.println(x.reverseString("Alex"));
 //        x.checkPalindrom("JavaA");
 //        x.countChars("Aa kiu, I swd skieo 236587. GH kiu: sieo?? 25.33");
-        x.count3digitNumbers();
+//        x.count3digitNumbers();
+//        x.turnFirstDigitToUpper();
 
-
+        Scanner in = new Scanner(System.in);
+        System.out.print("Input a Sentence: ");
+        String line = in.nextLine();
+        Scanner lineScan = new Scanner(line);
     }
 
     // Given two int values, return their sum. Unless the two values are the same, then return double their sum.

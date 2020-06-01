@@ -86,6 +86,20 @@ public class W3resource {
         }
         System.out.println("Total number of the three-digit-number is " + amount);
     }
+
+    //Write a Java program to capitalize the first letter of each word in a sentence
+    public static void turnFirstDigitToUpper() {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Input a Sentence: ");
+        String line = in.nextLine();
+        String upperCaseLine = "";
+        Scanner lineScan = new Scanner(line);
+        while (lineScan.hasNext()) {
+            String word = lineScan.next();
+            upperCaseLine += Character.toUpperCase(word.charAt(0)) + word.substring(1) + " ";
+        }
+        System.out.println(upperCaseLine.trim());
+    }
 }
 
 
