@@ -100,6 +100,31 @@ public class W3resource {
         }
         System.out.println(upperCaseLine.trim());
     }
+
+    //Write a Java program that accepts two integer values between 25 to 75 and return true if there is a common digit in both numbers
+    public static boolean commonDigit(int p, int q) {
+        if (p < 25 || q > 75)
+            return false;
+        if (q < 25 || p > 75)
+            return false;
+        int x = p % 10;
+        int y = q % 10;
+        p /= 10;
+        q /= 10;
+        return (p == q || p == y || x == q || x == y);
+    }
+
+    //Write a Java program to check if a given number is prime or not
+    public static boolean isPrime(int n) {
+        for (int i = 3; i * i <= n; i+= 2) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
 }
 
 

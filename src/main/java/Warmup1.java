@@ -15,11 +15,9 @@ public class Warmup1 {
 //        x.countChars("Aa kiu, I swd skieo 236587. GH kiu: sieo?? 25.33");
 //        x.count3digitNumbers();
 //        x.turnFirstDigitToUpper();
+//        System.out.println("Numarul este prim - " + x.isPrime(29));
 
-        Scanner in = new Scanner(System.in);
-        System.out.print("Input a Sentence: ");
-        String line = in.nextLine();
-        Scanner lineScan = new Scanner(line);
+
     }
 
     // Given two int values, return their sum. Unless the two values are the same, then return double their sum.
